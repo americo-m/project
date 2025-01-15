@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROV Midia - Assessoria em Operações de Vendas</title>
+  <meta name="description" content="Especialistas em assessoria de operações de vendas e análise de KPIs para impulsionar seu negócio.">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base/reset.css">
+  <link rel="stylesheet" href="../css/themes/variables.css">
+  <link rel="stylesheet" href="../css/components/buttons.desktop.css">
+  <link rel="stylesheet" href="../css/components/buttons.mobile.css">
+  <link rel="stylesheet" href="../css/components/cards.css">
+  <link rel="stylesheet" href="../css/layout/grid.css">
+  <link rel="stylesheet" href="../css/layout/navbar.css">
+</head>
+<body>
+  <!-- Include header partial -->
+  <div id="header-container"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content fade-in">
+        <h1>Transforme seus dados em <span class="highlight">resultados</span></h1>
+        <p>Especialistas em assessoria de operações de vendas e análise de KPIs para impulsionar seu negócio.</p>
+        <a href="https://calendly.com/rovmidia/diagnostico-exclusivo-rov-midia" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="cta-button">
+          <span>Fale Conosco</span>
+          
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rest of the content -->
+
+  <!-- Include footer partial -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript -->
+  <script type="module" src="../js/scripts/main.js"></script>
+  <script>
+    // Load partials
+    fetch('../html/partials/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      });
+
+    fetch('../html/partials/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+/* Desktop button styles */
+.cta-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
+  padding: 0.75rem 2.5rem !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+.cta-button:hover {
+  background-color: var(--primary-dark) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2) !important;
+}
+
+.cta-button:active {
+  transform: translateY(0) !important;
+}

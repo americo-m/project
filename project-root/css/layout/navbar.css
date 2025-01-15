@@ -1,0 +1,21 @@
+/* Navigation styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+
+  
+  
+}
+

@@ -1,0 +1,19 @@
+/* Mobile button styles */
+@media (max-width: 767px) {
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .cta-button:hover {
+    transform: none;
+  }
+
+  .cta-button:active {
+    transform: translateY(1px);
+  }
+}

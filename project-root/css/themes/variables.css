@@ -1,0 +1,19 @@
+:root {
+  --primary: #FF0000;
+  --primary-dark: #CC0000;
+  --secondary: #1A1A1A;
+  --secondary-light: #2A2A2A;
+  --white: #FFFFFF;
+  --gray-300: #D1D5DB;
+  --gray-400: #9CA3AF;
+  --gray-700: #374151;
+  --gray-800: #1F2937;
+}
+
+.logo-img {
+  width: 50px;  /* Ajuste o tamanho conforme necessário */
+  height: auto; /* Manter a proporção da imagem */
+  position: absolute; /* Posicionamento absoluto */
+  top: 10px; /* Distância do topo */
+  left: 10px; /* Distância da esquerda */
+}
