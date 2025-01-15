@@ -43,12 +43,37 @@ const successMessage = document.getElementById('successMessage');
 if (contactForm && successMessage) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+    const nameInput = contactForm.querySelector('input[id="name"]');
+    const emailInput = contactForm.querySelector('input[id="email"]');
+    const messageInput = contactForm.querySelector('textarea[id="message"]');
+
+    const payload = {
+      name: nameInput.value,
+      email: emailInput.value,
+      message: messageInput.value
+    }
+    console.log("🚀 ~ contactForm.addEventListener ~ payload:", payload)
+
+    fetch('https://example.com/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
     // Simulate form submission
     setTimeout(() => {
       successMessage.classList.add('active');
       contactForm.reset();
-      
+
       setTimeout(() => {
         successMessage.classList.remove('active');
       }, 3000);
@@ -62,7 +87,7 @@ const newsletterForm = document.getElementById('newsletterForm');
 if (newsletterForm) {
   newsletterForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     // Simulate newsletter subscription
     const input = newsletterForm.querySelector('input');
     if (input) {
@@ -78,11 +103,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     e.preventDefault();
     const targetId = anchor.getAttribute('href');
     const targetElement = document.querySelector(targetId);
-    
+
     if (targetElement) {
       const navHeight = document.querySelector('.navbar')?.offsetHeight || 0;
       const targetPosition = targetElement.offsetTop - navHeight;
-      
+
       window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'
@@ -97,15 +122,15 @@ buttons.forEach(button => {
   button.addEventListener('mouseenter', () => {
     button.style.transform = 'scale(1.05)';
   });
-  
+
   button.addEventListener('mouseleave', () => {
     button.style.transform = 'scale(1)';
   });
-  
+
   button.addEventListener('mousedown', () => {
     button.style.transform = 'scale(0.95)';
   });
-  
+
   button.addEventListener('mouseup', () => {
     button.style.transform = 'scale(1.05)';
   });
@@ -118,7 +143,7 @@ serviceCards.forEach(card => {
     card.style.transform = 'translateY(-8px)';
     card.style.transition = 'transform 0.3s ease';
   });
-  
+
   card.addEventListener('mouseleave', () => {
     card.style.transform = 'translateY(0)';
   });
@@ -134,7 +159,7 @@ formInputs.forEach(input => {
     }
     input.style.boxShadow = '0 4px 12px rgba(255, 0, 0, 0.1)';
   });
-  
+
   input.addEventListener('blur', () => {
     const parent = input.parentElement;
     if (parent) {
@@ -151,13 +176,13 @@ const navbar = document.querySelector('.navbar');
 if (navbar) {
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
+
     if (currentScroll <= 0) {
       navbar.style.boxShadow = 'none';
     } else {
       navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
     }
-    
+
     lastScroll = currentScroll;
   });
 }
